@@ -8,6 +8,10 @@ This repository contains my work on an airline dataset provided by CloudJet. The
 
 The dataset includes eight tables: `aircrafts_data`, `airports_data`, `boarding_passes`, `bookings`, `flights`, `seats`, `ticket_flights`, and `tickets`.
 
+### ERD Diagram of Airline Dataset
+<img width="1319" height="764" alt="Screenshot 2025-09-26 165748" src="https://github.com/user-attachments/assets/7311afe8-d849-4a63-b9b5-b9883bc15619" />
+
+
 ## Usage of `main.py` & `queries.sql`
 This project allows you to run predefined SQL queries directly from the terminal using Python, eliminating the need to manually open pgAdmin or another PostgreSQL client.
 ### Files
