@@ -40,11 +40,11 @@ def execute_queries_from_file(cursor, filepath):
 def main():
     print("Starting script...")
     conn = psycopg2.connect(
-        dbname="CloudJet",
-        user="postgres",
-        password="000989",
+        dbname="dbname",
+        user="username",
+        password="yourpassword",
         host="localhost",
-        port="5432"
+        port="portnumber"
     )
     cursor = conn.cursor()
     
@@ -60,3 +60,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
