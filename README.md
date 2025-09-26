@@ -8,7 +8,7 @@ This repository contains my work on an airline dataset provided by CloudJet. The
 
 The dataset includes eight tables: `aircrafts_data`, `airports_data`, `boarding_passes`, `bookings`, `flights`, `seats`, `ticket_flights`, and `tickets`.
 
-# Usage of `main.py` & `queries.sql`
+## Usage of `main.py` & `queries.sql`
 This project allows you to run predefined SQL queries directly from the terminal using Python, eliminating the need to manually open pgAdmin or another PostgreSQL client.
 ### Files
 - `main.py` - Python script to execute SQL queries from the terminal.
