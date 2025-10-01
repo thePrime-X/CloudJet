@@ -1,11 +1,22 @@
 import psycopg2
 import sqlparse
+from urllib.parse import urlparse
+import config
+
+def get_conn_from_uri(uri):
+    result = urlparse(uri)
+    return psycopg2.connect(
+        dbname=result.path.lstrip('/'),
+        user=result.username,
+        password=result.password,
+        host=result.hostname,
+        port=result.port
+    )
 
 def execute_queries_from_file(cursor, filepath):
     with open(filepath, 'r') as file:
         sql_file = file.read()
     
-    import sqlparse
     statements = sqlparse.split(sql_file)
     print(f"Total queries found: {len(statements)}\n")
     
@@ -36,16 +47,9 @@ def execute_queries_from_file(cursor, filepath):
         except Exception as e:
             print(f"Error executing query {i}: {e}")
 
-
 def main():
     print("Starting script...")
-    conn = psycopg2.connect(
-        dbname="CloudJet",
-        user="postgres",
-        password="000989",
-        host="localhost",
-        port="5432"
-    )
+    conn = get_conn_from_uri(config.DB_URI)
     cursor = conn.cursor()
     
     # test connection
