@@ -6,8 +6,7 @@ from flights f
 join aircrafts_data a
 	on f.aircraft_code = a.aircraft_code
 group by a.model
-order by usage_count desc
-limit 5;
+order by usage_count desc;
 
 -- Top 5 Aircaft Models with the Highest Number of Passengers
 SELECT 
@@ -17,8 +16,7 @@ FROM seats s
 JOIN aircrafts_data a
     ON s.aircraft_code = a.aircraft_code
 GROUP BY a.model
-ORDER BY total_seats DESC
-LIMIT 5;
+ORDER BY total_seats DESC;
 
 -- Top 5 Flights with the Highest Number of Business Classes Booked
 SELECT 
@@ -29,8 +27,7 @@ JOIN aircrafts_data a
     ON s.aircraft_code = a.aircraft_code
 WHERE s.fare_conditions = 'Business'
 GROUP BY a.model
-ORDER BY business_seat_count DESC
-LIMIT 5;
+ORDER BY business_seat_count DESC;
 
 -- Top 5 Flights with the Highest Number of Economy Classes Booked
 SELECT 
@@ -41,16 +38,14 @@ JOIN aircrafts_data a
     ON s.aircraft_code = a.aircraft_code
 WHERE s.fare_conditions = 'Economy'
 GROUP BY a.model
-ORDER BY economy_seat_count DESC
-LIMIT 5;
+ORDER BY economy_seat_count DESC;
 
 -- Top 5 Busiest Destinations by Number of Flights
 SELECT a.city AS city_name, COUNT(f.flight_id) AS total_arrivals
 FROM flights f
 JOIN airports_data a ON f.arrival_airport = a.airport_code
 GROUP BY a.city
-ORDER BY total_arrivals DESC
-LIMIT 5;
+ORDER BY total_arrivals DESC;
 
 -- Top 3 Most prefered aircrafts model for business class
 SELECT ad.model, COUNT(*) AS business_class_passengers
@@ -59,8 +54,7 @@ JOIN flights f ON tf.flight_id = f.flight_id
 JOIN aircrafts_data ad ON f.aircraft_code = ad.aircraft_code
 WHERE tf.fare_conditions = 'Business'
 GROUP BY ad.model
-ORDER BY business_class_passengers DESC
-Limit 3;
+ORDER BY business_class_passengers DESC;
 
 -- Top 3 Most prefered aircrafts model for economy class
 SELECT ad.model, COUNT(*) AS economy_class_passengers
@@ -69,8 +63,7 @@ JOIN flights f ON tf.flight_id = f.flight_id
 JOIN aircrafts_data ad ON f.aircraft_code = ad.aircraft_code
 WHERE tf.fare_conditions = 'Economy'
 GROUP BY ad.model
-ORDER BY business_class_passengers DESC
-limit 3;
+ORDER BY economy_class_passengers DESC;
 
 -- Hottest Destinations by Number of Passengers
 SELECT a.city, COUNT(*) AS total_passengers
@@ -78,8 +71,7 @@ FROM ticket_flights tf
 JOIN flights f ON tf.flight_id = f.flight_id
 JOIN airports_data a ON f.arrival_airport = a.airport_code
 GROUP BY a.city
-ORDER BY total_passengers DESC
-Limit 5
+ORDER BY total_passengers DESC;
 
 -- Top 5 Longest Flights by Duration
 WITH flight_durations AS (
@@ -108,8 +100,7 @@ FROM ranked_flights rf
 JOIN airports_data ad ON rf.departure_airport = ad.airport_code
 JOIN airports_data aa ON rf.arrival_airport = aa.airport_code
 WHERE rf.rn = 1
-ORDER BY rf.duration_minutes DESC
-LIMIT 5;
+ORDER BY rf.duration_minutes DESC;
 
 -- Top 5 Destinations with the Highest Number of Business Class Passengers
 SELECT 
@@ -120,6 +111,5 @@ JOIN flights f ON tf.flight_id = f.flight_id
 JOIN airports_data a ON f.arrival_airport = a.airport_code
 WHERE tf.fare_conditions = 'Business'
 GROUP BY a.city
-ORDER BY business_class_passenger_count DESC
-LIMIT 5;
+ORDER BY business_class_passenger_count DESC;
 
