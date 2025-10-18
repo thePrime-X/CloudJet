@@ -1,0 +1,55 @@
+slice_name: T5. MapBox - Total Arrivals per Airport
+description: null
+certified_by: null
+certification_details: null
+viz_type: mapbox
+params:
+  datasource: 10__table
+  viz_type: mapbox
+  slice_id: 7
+  matrixify_show_column_headers: true
+  matrixify_mode_columns: metrics
+  matrixify_dimension_selection_mode_columns: members
+  matrixify_dimension_columns:
+    dimension: ''
+    values: []
+  matrixify_topn_value_columns: 10
+  matrixify_topn_order_columns: desc
+  matrixify_show_row_labels: true
+  matrixify_mode_rows: metrics
+  matrixify_dimension_selection_mode_rows: members
+  matrixify_dimension_rows:
+    dimension: ''
+    values: []
+  matrixify_topn_value_rows: 10
+  matrixify_topn_order_rows: desc
+  matrixify_row_height: 300
+  matrixify_fit_columns_dynamically: true
+  matrixify_charts_per_row: 4
+  all_columns_x: longitude
+  all_columns_y: latitude
+  clustering_radius: '20'
+  row_limit: 10000
+  adhoc_filters: []
+  groupby: []
+  point_radius: Auto
+  point_radius_unit: Pixels
+  mapbox_label:
+  - total_arrivals
+  pandas_aggfunc: max
+  render_while_dragging: true
+  mapbox_style: mapbox://styles/mapbox/satellite-streets-v9
+  global_opacity: 1
+  mapbox_color: rgb(128, 0, 128)
+  viewport_longitude: 99.16679859161376
+  viewport_latitude: 58.46725453820398
+  viewport_zoom: 1.0997511922700283
+  extra_form_data: {}
+  dashboards:
+  - 2
+query_context: '{"datasource":{"id":10,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"having":"","where":""},"applied_time_extras":{},"columns":[],"metrics":[],"annotation_layers":[],"row_limit":10000,"series_limit":0,"group_others_when_limit_reached":false,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{}}],"form_data":{"datasource":"10__table","viz_type":"mapbox","slice_id":7,"matrixify_show_column_headers":true,"matrixify_mode_columns":"metrics","matrixify_dimension_selection_mode_columns":"members","matrixify_dimension_columns":{"dimension":"","values":[]},"matrixify_topn_value_columns":10,"matrixify_topn_order_columns":"desc","matrixify_show_row_labels":true,"matrixify_mode_rows":"metrics","matrixify_dimension_selection_mode_rows":"members","matrixify_dimension_rows":{"dimension":"","values":[]},"matrixify_topn_value_rows":10,"matrixify_topn_order_rows":"desc","matrixify_row_height":300,"matrixify_fit_columns_dynamically":true,"matrixify_charts_per_row":4,"all_columns_x":"longitude","all_columns_y":"latitude","clustering_radius":"20","row_limit":10000,"adhoc_filters":[],"groupby":[],"point_radius":"Auto","point_radius_unit":"Pixels","mapbox_label":["total_arrivals"],"pandas_aggfunc":"max","render_while_dragging":true,"mapbox_style":"mapbox://styles/mapbox/satellite-streets-v9","global_opacity":1,"mapbox_color":"rgb(128,
+  0, 128)","viewport_longitude":99.16679859161376,"viewport_latitude":58.46725453820398,"viewport_zoom":1.0997511922700283,"extra_form_data":{},"dashboards":[2],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: f254e559-4a4d-4c6d-a6bc-c2284d9c3135
+version: 1.0.0
+dataset_uuid: 40f8830d-b2a9-402b-abdd-c94356262faf

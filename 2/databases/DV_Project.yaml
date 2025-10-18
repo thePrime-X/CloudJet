@@ -1,0 +1,14 @@
+database_name: DV Project
+sqlalchemy_uri: postgresql+psycopg2://postgres:XXXXXXXXXX@host.docker.internal:5000/CloudJet
+cache_timeout: null
+expose_in_sqllab: true
+allow_run_async: false
+allow_ctas: false
+allow_cvas: false
+allow_dml: false
+allow_file_upload: true
+extra:
+  allows_virtual_table_explore: true
+impersonate_user: false
+uuid: 77b6802e-872e-484d-a79b-5f8715fb5b5b
+version: 1.0.0

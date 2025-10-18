@@ -1,0 +1,122 @@
+table_name: bookings
+main_dttm_col: book_date
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: CloudJet
+schema: public
+sql: ''
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+folders: null
+uuid: 55fe999a-dcc5-4054-8ce2-fda56712dcf8
+metrics:
+- metric_name: growth
+  verbose_name: growth
+  metric_type: null
+  expression: "MAX(\r\n  (\r\n    SUM(total_amount)\r\n    - LAG(SUM(total_amount))\
+    \ OVER (ORDER BY MIN(book_date))\r\n  ) / NULLIF(LAG(SUM(total_amount)) OVER (ORDER\
+    \ BY MIN(book_date)), 0)\r\n)\r\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: median
+  verbose_name: median
+  metric_type: null
+  expression: "PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY total_amount)\r\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: average
+  verbose_name: average
+  metric_type: null
+  expression: avg(total_amount)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: sum
+  verbose_name: sum
+  metric_type: null
+  expression: sum(total_amount)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: Total Amount Normalization
+  verbose_name: Total Amount Normalization
+  is_dttm: false
+  is_active: true
+  type: NUMERIC
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: "( total_amount - 3400 ) / (1204500 - 3400)\r\n"
+  description: Normalized total amount
+  python_date_format: null
+  extra: {}
+- column_name: total_amount
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: book_ref
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: book_date
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: TEXT
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: ''
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: 77b6802e-872e-484d-a79b-5f8715fb5b5b

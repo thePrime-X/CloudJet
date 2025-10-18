@@ -1,0 +1,83 @@
+table_name: SunBurst by Dst, Model, Class_Type
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: CloudJet
+schema: public
+sql: "SELECT \r\n    a.city AS destination_city,\r\n    ad.model AS aircraft_model,\r\
+  \n    s.fare_conditions AS class_type,\r\n    COUNT(*) AS passenger_count\r\nFROM\
+  \ seats s\r\nJOIN aircrafts_data ad ON s.aircraft_code = ad.aircraft_code\r\nJOIN\
+  \ flights f ON f.aircraft_code = ad.aircraft_code\r\nJOIN airports_data a ON f.arrival_airport\
+  \ = a.airport_code\r\nGROUP BY a.city, ad.model, s.fare_conditions;\r\n"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+folders: null
+uuid: fa7fd93f-015f-43e5-bc81-5a1c5a3393af
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: passenger_count
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: LONGINTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: aircraft_model
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: destination_city
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: class_type
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 77b6802e-872e-484d-a79b-5f8715fb5b5b

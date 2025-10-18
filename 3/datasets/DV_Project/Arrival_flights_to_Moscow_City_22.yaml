@@ -1,0 +1,60 @@
+table_name: Arrival flights to Moscow City
+main_dttm_col: arrival_6h_block
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: CloudJet
+schema: public
+sql: "SELECT\r\n  -- Floor scheduled_arrival to the nearest 3-hour block\r\n  DATE_TRUNC('hour',\
+  \ f.scheduled_arrival::timestamp) - \r\n    INTERVAL '1 hour' * (EXTRACT(HOUR FROM\
+  \ f.scheduled_arrival::timestamp)::int % 6) AS arrival_6h_block,\r\n  COUNT(*) AS\
+  \ flights_count\r\nFROM flights f\r\nJOIN airports_data a ON f.arrival_airport =\
+  \ a.airport_code\r\nWHERE a.city ILIKE '%moscow%'\r\n  AND f.scheduled_arrival IS\
+  \ NOT NULL\r\nGROUP BY arrival_6h_block\r\nORDER BY arrival_6h_block;\r\n"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+folders: null
+uuid: ad398bcc-68f3-4721-8940-9058ad431060
+metrics:
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra: null
+  warning_text: null
+columns:
+- column_name: arrival_6h_block
+  verbose_name: null
+  is_dttm: true
+  is_active: true
+  type: DATETIME
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+- column_name: flights_count
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: LONGINTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: null
+version: 1.0.0
+database_uuid: 77b6802e-872e-484d-a79b-5f8715fb5b5b

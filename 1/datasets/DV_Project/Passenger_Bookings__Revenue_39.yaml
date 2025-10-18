@@ -1,0 +1,238 @@
+table_name: Passenger Bookings & Revenue
+main_dttm_col: null
+description: null
+default_endpoint: null
+offset: 0
+cache_timeout: null
+catalog: CloudJet
+schema: public
+sql: "SELECT\r\n    b.book_ref,\r\n    b.book_date,\r\n    b.total_amount AS booking_total,\r\
+  \n    t.ticket_no,\r\n    tf.amount AS ticket_amount,\r\n    tf.fare_conditions,\r\
+  \n    f.flight_id,\r\n    f.flight_no,\r\n    f.departure_airport,\r\n    f.arrival_airport,\r\
+  \n    f.scheduled_departure,\r\n    f.scheduled_arrival,\r\n    f.actual_departure,\r\
+  \n    f.actual_arrival\r\nFROM bookings b\r\nJOIN tickets t ON b.book_ref = t.book_ref\r\
+  \nJOIN ticket_flights tf ON t.ticket_no = tf.ticket_no\r\nJOIN flights f ON tf.flight_id\
+  \ = f.flight_id;\r\n"
+params: null
+template_params: null
+filter_select_enabled: true
+fetch_values_predicate: null
+extra: null
+normalize_columns: false
+always_filter_main_dttm: false
+folders: null
+uuid: feb1bb0e-6ab8-4afb-a804-b69f94585069
+metrics:
+- metric_name: Growth Rate
+  verbose_name: Growth_Rate
+  metric_type: null
+  expression: "(\r\n  SUM(ticket_amount) - \r\n  LAG(SUM(ticket_amount)) OVER (ORDER\
+    \ BY MIN(book_date))\r\n) / LAG(SUM(ticket_amount)) OVER (ORDER BY MIN(book_date))\r\
+    \n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: Median Ticket Amount
+  verbose_name: Median(ticket_amount)
+  metric_type: null
+  expression: "PERCENTILE_CONT(0.5) WITHIN GROUP (ORDER BY ticket_amount)\r\n"
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: Average Ticket Amount
+  verbose_name: AVG(ticket_amount)
+  metric_type: null
+  expression: AVG(ticket_amount)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+- metric_name: count
+  verbose_name: COUNT(*)
+  metric_type: count
+  expression: COUNT(*)
+  description: null
+  d3format: null
+  currency: null
+  extra:
+    warning_markdown: ''
+  warning_text: null
+columns:
+- column_name: booking_total
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ticket_amount
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: flight_id
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: INTEGER
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: actual_arrival
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: actual_departure
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: arrival_airport
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: scheduled_arrival
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: departure_airport
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: book_date
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: scheduled_departure
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: fare_conditions
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: book_ref
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: ticket_no
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+- column_name: flight_no
+  verbose_name: null
+  is_dttm: false
+  is_active: true
+  type: STRING
+  advanced_data_type: null
+  groupby: true
+  filterable: true
+  expression: null
+  description: null
+  python_date_format: null
+  extra: {}
+version: 1.0.0
+database_uuid: 77b6802e-872e-484d-a79b-5f8715fb5b5b

@@ -1,0 +1,163 @@
+dashboard_title: Basic 6 Graphs
+description: null
+css: ''
+slug: null
+certified_by: ''
+certification_details: ''
+published: false
+uuid: 0c57fb5d-7c66-4c86-b2b9-0e7de0e300b0
+position:
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-N-8K1CEIYC
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: Basic 6 Graphs
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-N-8K1CEIYC:
+    children:
+    - CHART-NK1914K9
+    - CHART-TS6BDX6V
+    - CHART-L6725VIA
+    - CHART-3LTRPLYA
+    - CHART-8YDLS16U
+    - CHART-RSW21VHO
+    - CHART-3SL1CI7J
+    id: ROW-N-8K1CEIYC
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    type: ROW
+    parents:
+    - ROOT_ID
+    - GRID_ID
+  CHART-NK1914K9:
+    children: []
+    id: CHART-NK1914K9
+    meta:
+      chartId: 22
+      height: 50
+      sliceName: Histogram - Flight Duration
+      uuid: aa9e6290-5ea8-4756-bc33-6583f8cce954
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-8K1CEIYC
+  CHART-TS6BDX6V:
+    children: []
+    id: CHART-TS6BDX6V
+    meta:
+      chartId: 19
+      height: 50
+      sliceName: Scatter Plot - Number of Arrivals per Airport
+      uuid: 1693b78e-e1fe-4c11-bdb1-257d255fb50a
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-8K1CEIYC
+  CHART-L6725VIA:
+    children: []
+    id: CHART-L6725VIA
+    meta:
+      chartId: 23
+      height: 50
+      sliceName: 'Pie Chart - Hottest Destinations '
+      uuid: d8183ae5-3b35-4e88-8e12-fd456a07dd04
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-8K1CEIYC
+  CHART-3LTRPLYA:
+    children: []
+    id: CHART-3LTRPLYA
+    meta:
+      chartId: 18
+      height: 50
+      sliceName: Scatter Plot - Arrival flights to Moscow City
+      uuid: fd28b45c-82fc-44ce-9425-161890c15609
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-8K1CEIYC
+  CHART-8YDLS16U:
+    children: []
+    id: CHART-8YDLS16U
+    meta:
+      chartId: 21
+      height: 50
+      sliceName: Horizontal Bar Graph - Number of seats per Aircraft
+      uuid: de735daa-8e90-4b80-b59b-de554164196a
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-8K1CEIYC
+  CHART-RSW21VHO:
+    children: []
+    id: CHART-RSW21VHO
+    meta:
+      chartId: 17
+      height: 50
+      sliceName: Line Graph - Most Used Aircraft Models
+      uuid: 0ed0c2a7-6b11-444f-99ec-e47a7a5c77c8
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-8K1CEIYC
+  CHART-3SL1CI7J:
+    children: []
+    id: CHART-3SL1CI7J
+    meta:
+      chartId: 20
+      height: 50
+      sliceName: Bar Graph - Number of Arrivals per City
+      uuid: 75cf69a4-3cea-46f7-aad5-a2c149e7f9b8
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-8K1CEIYC
+metadata:
+  color_scheme_domain: []
+  shared_label_colors:
+  - MAX(flights_count)
+  map_label_colors: {}
+  label_colors: {}
+  chart_configuration: {}
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope: []
+  color_scheme: ''
+  refresh_frequency: 0
+  expanded_slices: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  default_filters: '{}'
+theme_uuid: null
+version: 1.0.0

@@ -1,0 +1,62 @@
+slice_name: Metrics - Passenger Booking & Revenue
+description: null
+certified_by: null
+certification_details: null
+viz_type: table
+params:
+  datasource: 39__table
+  viz_type: table
+  matrixify_show_column_headers: true
+  matrixify_mode_columns: metrics
+  matrixify_dimension_selection_mode_columns: members
+  matrixify_dimension_columns:
+    dimension: ''
+    values: []
+  matrixify_topn_value_columns: 10
+  matrixify_topn_order_columns: desc
+  matrixify_show_row_labels: true
+  matrixify_mode_rows: metrics
+  matrixify_dimension_selection_mode_rows: members
+  matrixify_dimension_rows:
+    dimension: ''
+    values: []
+  matrixify_topn_value_rows: 10
+  matrixify_topn_order_rows: desc
+  matrixify_row_height: 300
+  matrixify_fit_columns_dynamically: true
+  matrixify_charts_per_row: 3
+  query_mode: aggregate
+  groupby:
+  - book_date
+  - ticket_amount
+  time_grain_sqla: P1D
+  temporal_columns_lookup: {}
+  metrics:
+  - Average Ticket Amount
+  - Median Ticket Amount
+  - Growth Rate
+  all_columns: []
+  percent_metrics: []
+  adhoc_filters: []
+  order_by_cols: []
+  order_desc: true
+  server_page_length: 10
+  row_limit: 10000
+  percent_metric_calculation: row_limit
+  table_timestamp_format: smart_date
+  allow_render_html: true
+  show_cell_bars: true
+  color_pn: true
+  comparison_color_scheme: Green
+  comparison_type: values
+  extra_form_data: {}
+  dashboards:
+  - 3
+query_context: '{"datasource":{"id":39,"type":"table"},"force":false,"queries":[{"filters":[],"extras":{"time_grain_sqla":"P1D","having":"","where":""},"applied_time_extras":{},"columns":["book_date","ticket_amount"],"metrics":["Average
+  Ticket Amount","Median Ticket Amount","Growth Rate"],"orderby":[["Average Ticket
+  Amount",false]],"annotation_layers":[],"row_limit":10000,"series_limit":0,"group_others_when_limit_reached":false,"order_desc":true,"url_params":{},"custom_params":{},"custom_form_data":{},"post_processing":[],"time_offsets":[]}],"form_data":{"datasource":"39__table","viz_type":"table","matrixify_show_column_headers":true,"matrixify_mode_columns":"metrics","matrixify_dimension_selection_mode_columns":"members","matrixify_dimension_columns":{"dimension":"","values":[]},"matrixify_topn_value_columns":10,"matrixify_topn_order_columns":"desc","matrixify_show_row_labels":true,"matrixify_mode_rows":"metrics","matrixify_dimension_selection_mode_rows":"members","matrixify_dimension_rows":{"dimension":"","values":[]},"matrixify_topn_value_rows":10,"matrixify_topn_order_rows":"desc","matrixify_row_height":300,"matrixify_fit_columns_dynamically":true,"matrixify_charts_per_row":3,"query_mode":"aggregate","groupby":["book_date","ticket_amount"],"time_grain_sqla":"P1D","temporal_columns_lookup":{},"metrics":["Average
+  Ticket Amount","Median Ticket Amount","Growth Rate"],"all_columns":[],"percent_metrics":[],"adhoc_filters":[],"order_by_cols":[],"order_desc":true,"server_page_length":10,"row_limit":10000,"percent_metric_calculation":"row_limit","table_timestamp_format":"smart_date","allow_render_html":true,"show_cell_bars":true,"color_pn":true,"comparison_color_scheme":"Green","comparison_type":"values","extra_form_data":{},"dashboards":[3],"force":false,"result_format":"json","result_type":"full"},"result_format":"json","result_type":"full"}'
+cache_timeout: null
+uuid: 23bb931c-7fb9-4f0b-b9d8-195d78640244
+version: 1.0.0
+dataset_uuid: feb1bb0e-6ab8-4afb-a804-b69f94585069

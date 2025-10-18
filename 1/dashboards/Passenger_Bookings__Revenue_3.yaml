@@ -1,0 +1,515 @@
+dashboard_title: Passenger Bookings & Revenue
+description: null
+css: ''
+slug: null
+certified_by: ''
+certification_details: ''
+published: false
+uuid: a1dcff89-47f0-46e8-9efb-4f15118d4a83
+position:
+  CHART-explore-26-1:
+    children: []
+    id: CHART-explore-26-1
+    meta:
+      chartId: 26
+      height: 50
+      sliceName: Revenue By Fare Type
+      uuid: 4281f87f-4ba5-4c6b-8dd8-78eb48cf1112
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3I7Bw4f4gGBJFwt44o9is
+    type: CHART
+  CHART-explore-27-1:
+    children: []
+    id: CHART-explore-27-1
+    meta:
+      chartId: 27
+      height: 50
+      sliceName: Total Revenue by Destination Airport
+      uuid: e3d3eced-f0a5-4e1c-8053-fb11cab1da49
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-3I7Bw4f4gGBJFwt44o9is
+    type: CHART
+  CHART-explore-28-1:
+    children: []
+    id: CHART-explore-28-1
+    meta:
+      chartId: 28
+      height: 50
+      sliceName: Total Revenue by Aircraft Models
+      uuid: 0308fd46-b830-49d6-9de0-b91520b2ff99
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-lcmbLz1mDpmvPI-SDWotK
+    type: CHART
+  CHART-explore-29-1:
+    children: []
+    id: CHART-explore-29-1
+    meta:
+      chartId: 29
+      height: 50
+      sliceName: Sunburst - Model -> Revenue -> Class
+      uuid: 82f556c0-4a8b-4ef9-b132-0c6d94cd456a
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-lcmbLz1mDpmvPI-SDWotK
+    type: CHART
+  CHART-explore-30-1:
+    children: []
+    id: CHART-explore-30-1
+    meta:
+      chartId: 30
+      height: 50
+      sliceName: Daily number of Passengers arrived in Moscow
+      uuid: e6b343a2-2a65-4fcb-ae31-b26cc6855b14
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-Qo3DBNuv8Ayq888RE8QPD
+    type: CHART
+  CHART-explore-34-1:
+    children: []
+    id: CHART-explore-34-1
+    meta:
+      chartId: 34
+      height: 50
+      sliceName: 'Query Daily Revenue '
+      uuid: 6d4b91a9-c71d-4f84-b01c-acb2645ded22
+      width: 4
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-Qo3DBNuv8Ayq888RE8QPD
+    type: CHART
+  DASHBOARD_VERSION_KEY: v2
+  GRID_ID:
+    children:
+    - ROW-3I7Bw4f4gGBJFwt44o9is
+    - ROW-lcmbLz1mDpmvPI-SDWotK
+    - ROW-Qo3DBNuv8Ayq888RE8QPD
+    - ROW-N-XRCVFUNF
+    id: GRID_ID
+    parents:
+    - ROOT_ID
+    type: GRID
+  HEADER_ID:
+    id: HEADER_ID
+    meta:
+      text: Passenger Bookings & Revenue
+    type: HEADER
+  ROOT_ID:
+    children:
+    - GRID_ID
+    id: ROOT_ID
+    type: ROOT
+  ROW-3I7Bw4f4gGBJFwt44o9is:
+    children:
+    - CHART-explore-26-1
+    - CHART-explore-27-1
+    id: ROW-3I7Bw4f4gGBJFwt44o9is
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-Qo3DBNuv8Ayq888RE8QPD:
+    children:
+    - CHART-explore-34-1
+    - CHART-explore-30-1
+    id: ROW-Qo3DBNuv8Ayq888RE8QPD
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-lcmbLz1mDpmvPI-SDWotK:
+    children:
+    - CHART-explore-28-1
+    - CHART-explore-29-1
+    id: ROW-lcmbLz1mDpmvPI-SDWotK
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    type: ROW
+  ROW-N-XRCVFUNF:
+    children:
+    - CHART-44TB2EYO
+    - CHART-K033YVVH
+    - CHART-CIB2HBY3
+    - CHART-XKVB48FH
+    - CHART-R9IS68NU
+    - CHART-RNUDDYSM
+    - CHART-7Y91NZA2
+    - CHART-BOFJRC3V
+    id: ROW-N-XRCVFUNF
+    meta:
+      '0': ROOT_ID
+      background: BACKGROUND_TRANSPARENT
+    type: ROW
+    parents:
+    - ROOT_ID
+    - GRID_ID
+  CHART-44TB2EYO:
+    children: []
+    id: CHART-44TB2EYO
+    meta:
+      chartId: 35
+      height: 50
+      sliceName: Passenger Bookings & Revenue
+      uuid: 3eee73cd-97ef-41e4-9612-b86398e28ba8
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-XRCVFUNF
+  CHART-K033YVVH:
+    children: []
+    id: CHART-K033YVVH
+    meta:
+      chartId: 41
+      height: 50
+      sliceName: Normalized Total Revenue by Aircraft Models
+      uuid: 4a991873-5222-4bf1-9dcd-0a68e0fbc68a
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-XRCVFUNF
+  CHART-CIB2HBY3:
+    children: []
+    id: CHART-CIB2HBY3
+    meta:
+      chartId: 36
+      height: 50
+      sliceName: Metrics - Passenger Booking & Revenue
+      uuid: 23bb931c-7fb9-4f0b-b9d8-195d78640244
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-XRCVFUNF
+  CHART-XKVB48FH:
+    children: []
+    id: CHART-XKVB48FH
+    meta:
+      chartId: 39
+      height: 50
+      sliceName: Bookings Dataset
+      uuid: 96e1c8f8-b1ff-4a0c-a975-b17441f6d9f4
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-XRCVFUNF
+  CHART-R9IS68NU:
+    children: []
+    id: CHART-R9IS68NU
+    meta:
+      chartId: 37
+      height: 50
+      sliceName: Untitled Query 1234
+      uuid: 0a6d586a-7176-428c-9f50-ed29d642cb02
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-XRCVFUNF
+  CHART-RNUDDYSM:
+    children: []
+    id: CHART-RNUDDYSM
+    meta:
+      chartId: 42
+      height: 50
+      sliceName: Normalized Total Revenue by Aircraft Models
+      uuid: 06740298-316a-40c0-8e7d-de973bced9dc
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-XRCVFUNF
+  CHART-7Y91NZA2:
+    children: []
+    id: CHART-7Y91NZA2
+    meta:
+      chartId: 40
+      height: 50
+      sliceName: AVG, MEDIAN, GR
+      uuid: 6536213b-a154-4d4d-8867-8968d96ffbb1
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-XRCVFUNF
+  CHART-BOFJRC3V:
+    children: []
+    id: CHART-BOFJRC3V
+    meta:
+      chartId: 38
+      height: 50
+      sliceName: Untitled Query 12345
+      uuid: f7629763-520a-4c95-b664-48d6d097f204
+      width: 4
+    type: CHART
+    parents:
+    - ROOT_ID
+    - GRID_ID
+    - ROW-N-XRCVFUNF
+metadata:
+  chart_configuration:
+    '26':
+      id: 26
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 27
+        - 28
+        - 29
+        - 30
+        - 34
+    '27':
+      id: 27
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 26
+        - 28
+        - 29
+        - 30
+        - 34
+    '28':
+      id: 28
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 26
+        - 27
+        - 29
+        - 30
+        - 34
+    '29':
+      id: 29
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 26
+        - 27
+        - 28
+        - 30
+        - 34
+    '30':
+      id: 30
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 26
+        - 27
+        - 28
+        - 29
+        - 34
+    '34':
+      id: 34
+      crossFilters:
+        scope: global
+        chartsInScope:
+        - 26
+        - 27
+        - 28
+        - 29
+        - 30
+  global_chart_configuration:
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded: []
+    chartsInScope:
+    - 26
+    - 27
+    - 28
+    - 29
+    - 30
+    - 34
+  color_scheme: ''
+  refresh_frequency: 10
+  expanded_slices: {}
+  label_colors: {}
+  timed_refresh_immune_slices: []
+  cross_filters_enabled: true
+  default_filters: '{}'
+  shared_label_colors:
+  - MAX(total_revenue)
+  map_label_colors:
+    '2036': '#D60039'
+    '2501': '#FFF46D'
+    '2602': '#FFE601'
+    '2615': '#FFE601'
+    '2681': '#FFCC00'
+    '2920': '#FFAD00'
+    '3297': '#FE8E17'
+    '3736': '#F47028'
+    '4437': '#E45233'
+    '5122': '#D1353B'
+    '5471': '#D60039'
+    '6001': '#FFF46D'
+    '6527': '#FFF46D'
+    '6680': '#FFE601'
+    '7122': '#FFCC00'
+    '7157': '#FFAD00'
+    '7182': '#FE8E17'
+    '7192': '#F47028'
+    '7206': '#E45233'
+    '7220': '#D1353B'
+    '7297': '#D60039'
+    '7332': '#FFF46D'
+    '7336': '#FFE601'
+    '7355': '#FFCC00'
+    '7395': '#FFAD00'
+    '7417': '#FE8E17'
+    '7433': '#F47028'
+    '7437': '#E45233'
+    '7480': '#D1353B'
+    '7494': '#D60039'
+    '7630': '#90042A'
+    MAX(total_revenue): '#004960'
+    Airbus A319-100: '#6BD3B3'
+    Airbus A321-200: '#FCC550'
+    Boeing 737-300: '#408184'
+    Boeing 767-300: '#66CBE2'
+    Boeing 777-300: '#EE5960'
+    Bombardier CRJ-200: '#484E5A'
+    Cessna 208 Caravan: '#FF874E'
+    Sukhoi Superjet-100: '#03748E'
+    Economy: '#0080F6'
+    Business: '#254081'
+    Comfort: '#6C4592'
+  color_scheme_domain: []
+  stagger_refresh: true
+  native_filter_configuration:
+  - id: NATIVE_FILTER-5voc5yHIdvRGAi-pyECcG
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      creatable: true
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Filter Fare Conditions
+    filterType: filter_select
+    targets:
+    - column:
+        name: fare_conditions
+      datasetUuid: 41430142-d401-4b69-985a-9b42dc1afa0f
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded:
+      - 25
+      - 30
+      - 31
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 26
+    - 27
+    - 28
+    - 29
+    tabsInScope: []
+  - id: NATIVE_FILTER-tJMM5KFovXdiijrM21wFr
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      creatable: true
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Filter by Date
+    filterType: filter_select
+    targets:
+    - column:
+        name: arrival_date
+      datasetUuid: 84907e08-bdbd-430b-a904-cbdfb697fa78
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      excluded:
+      - 26
+      - 27
+      - 28
+      - 29
+      rootPath:
+      - ROOT_ID
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 25
+    - 30
+    - 31
+    tabsInScope: []
+  - id: NATIVE_FILTER-y91zxhokiAyXg6FnvnmF3
+    controlValues:
+      enableEmptyFilter: false
+      defaultToFirstItem: false
+      creatable: true
+      multiSelect: true
+      searchAllOptions: false
+      inverseSelection: false
+    name: Filter by Date 02
+    filterType: filter_select
+    targets:
+    - column:
+        name: booking_day
+      datasetUuid: ebbeaf03-5fac-45dd-8fb9-47392e034f2c
+    defaultDataMask:
+      extraFormData: {}
+      filterState: {}
+      ownState: {}
+    cascadeParentIds: []
+    scope:
+      rootPath:
+      - ROOT_ID
+      excluded:
+      - 26
+      - 27
+      - 28
+      - 29
+    type: NATIVE_FILTER
+    description: ''
+    chartsInScope:
+    - 30
+    - 31
+    - 33
+    - 34
+    tabsInScope: []
+theme_uuid: null
+version: 1.0.0
