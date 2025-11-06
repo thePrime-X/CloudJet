@@ -46,6 +46,20 @@ services:
     restart: always
     networks:
       - monitoring
+  
+  custom_exporter:
+    build:
+      context: ./exporters
+      dockerfile: Dockerfile
+    container_name: custom_exporter
+    ports:
+      - "8000:8000"
+    restart: always
+    networks:
+      - monitoring
+    depends_on:
+      - prometheus
+
 
 volumes:
   prometheus_data:
