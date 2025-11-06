@@ -16,7 +16,7 @@ All metrics are visualized in Grafana dashboards with alerts and filters.
 - Postgres Exporter  
 - Python (`prometheus_client`) for custom exporters (optional)
 
----
+
 
 ## 📂 Folder Structure
 ```
@@ -32,10 +32,7 @@ prometheus_assignment/
 │   └── custom_exporter_dashboard.json
 └── README.md
 ```
-yaml
-Copy code
 
----
 
 ## ⚙️ Setup Steps
 
