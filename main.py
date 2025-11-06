@@ -23,10 +23,10 @@ def execute_queries_from_file(cursor, filepath):
     def is_select_query(query):
         lines = query.splitlines()
         for line in lines:
-            stripped = line.strip()
+            stripped = line.strip().lower()
             if stripped == '' or stripped.startswith('--'):
                 continue
-            return stripped.lower().startswith('select')
+            return stripped.startswith('select') or stripped.startswith('with')
         return False
     
     for i, query in enumerate(statements, start=1):

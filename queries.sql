@@ -113,3 +113,15 @@ WHERE tf.fare_conditions = 'Business'
 GROUP BY a.city
 ORDER BY business_class_passenger_count DESC;
 
+
+
+INSERT INTO aircrafts_data (aircraft_code, model, range)
+VALUES ('sampleAircraft', 'jet', 15000);
+
+
+insert into ticket_flights (ticket_no, flight_id, fare_conditions, amount)
+values ('zzzzzz', 990099, 'business', 15000);
+
+
+insert into flights (flight_id, flight_no, aircraft_code)
+values (990099, 'mmmmnnnn', 'sampleAircraft')
