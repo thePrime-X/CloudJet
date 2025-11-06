@@ -1,7 +1,12 @@
 # Prometheus Monitoring Assignment
 
 ## 📝 Project Overview
-This project sets up a **Prometheus + Grafana monitoring system** to collect and visualize metrics from **Node Exporter** (system metrics) and **Postgres Exporter** (database metrics). Alerts are configured in Grafana for critical conditions.  
+This project sets up a complete monitoring system using Prometheus and Grafana.
+It collects metrics from:
+- Node Exporter —> System performance (CPU, memory, disk, etc.)
+- Postgres Exporter —> Database performance
+- Custom Exporter (Python) -> External API data (OpenWeather)
+All metrics are visualized in Grafana dashboards with alerts and filters.
 
 **Stack Used:**
 - Docker & Docker Compose  
@@ -14,16 +19,19 @@ This project sets up a **Prometheus + Grafana monitoring system** to collect and
 ---
 
 ## 📂 Folder Structure
+```
 prometheus_assignment/
 ├── docker-compose.yml
 ├── prometheus.yml
 ├── exporters/
-│ └── custom_exporter.py
+│   ├── custom_exporter.py
+│   └── Dockerfile
 ├── grafana_dashboards/
-│ ├── node_exporter_dashboard.json
-│ └── database_exporter_dashboard.json
+│   ├── node_exporter_dashboard.json
+│   ├── database_exporter_dashboard.json
+│   └── custom_exporter_dashboard.json
 └── README.md
-
+```
 yaml
 Copy code
 
@@ -38,7 +46,7 @@ Copy code
 ### 2. Start Services
 From project root:
 ```bash
-docker-compose up -d
+docker-compose up -d --build
 ```
 Check running containers:
 ```bash
@@ -50,7 +58,25 @@ Prometheus (9090)
 Grafana (3000)
 Node Exporter (9100)
 Postgres Exporter (9187)
+Custom Exporter (8000)
 ```
-### 3. Access Grafana
-Open: `http://localhost:3000`
+## Dashboards
+Each dashboard visualizes 10 metrics with filter and alerts:
+- **Node Exporter Dashboard** -> System Metrics
+- **Database Dashboard** -> PostgreSQL performance
+- **Customer Exporter Dashboard** -> Weather API Data
+You can import  `.json` file from `dashboards/` into Grafana
+
+## Alerts
+Grafana alerts are configured:
+- CPU usage > 90% for 5 minutes
+- Database connection count too high
+- Customer weather alert (high temp)
+
+## How to Stop
+```bash
+docker-compose down
+```
+
+
 
