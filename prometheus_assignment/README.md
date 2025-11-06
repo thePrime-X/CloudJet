@@ -52,5 +52,5 @@ Node Exporter (9100)
 Postgres Exporter (9187)
 ```
 ### 3. Access Grafana
-Open: ```http://localhost:3000```
+Open: `http://localhost:3000`
 
