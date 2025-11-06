@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 0,
+  "id": 1,
   "links": [],
   "panels": [
     {
@@ -86,7 +86,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "100 * (1 - avg by(cpu) (rate(node_cpu_seconds_total{mode=\"idle\"}[5m])))\r\n",
+          "expr": "100 * (1 - avg by(cpu) (rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$instance\"}[5m])))\r\n",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -194,7 +194,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "rate(node_network_receive_bytes_total{device=\"eth0\"}[5m])\r\n",
+          "expr": "rate(node_network_receive_bytes_total{device=\"eth0\", instance=\"$instance\"}[5m])\r\n",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -205,7 +205,7 @@
             "uid": "ff3a79p64wi68c"
           },
           "editorMode": "code",
-          "expr": "rate(node_network_transmit_bytes_total{device=\"eth0\"}[5m])\r\n",
+          "expr": "rate(node_network_transmit_bytes_total{device=\"eth0\", instance=\"$instance\"}[5m])\r\n",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -322,7 +322,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "rate(node_disk_read_bytes_total[5m])",
+          "expr": "rate(node_disk_read_bytes_total{instance=\"$instance\"}[5m])",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -333,7 +333,7 @@
             "uid": "ff3a79p64wi68c"
           },
           "editorMode": "code",
-          "expr": "rate(node_disk_written_bytes_total[5m])",
+          "expr": "rate(node_disk_written_bytes_total{instance=\"$instance\"}[5m])",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -397,7 +397,7 @@
       "targets": [
         {
           "editorMode": "code",
-          "expr": "(node_memory_MemTotal_bytes - node_memory_MemAvailable_bytes) / node_memory_MemTotal_bytes * 100",
+          "expr": "(node_memory_MemTotal_bytes{instance=\"$instance\"} - node_memory_MemAvailable_bytes{instance=\"$instance\"}) / node_memory_MemTotal_bytes{instance=\"$instance\"} * 100",
           "legendFormat": "__auto",
           "range": true,
           "refId": "A"
@@ -408,7 +408,7 @@
             "uid": "ff3a79p64wi68c"
           },
           "editorMode": "code",
-          "expr": "node_memory_MemAvailable_bytes / 1024 / 1024 / 1024",
+          "expr": "node_memory_MemAvailable_bytes{instance=\"$instance\"} / 1024 / 1024 / 1024",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -421,7 +421,7 @@
             "uid": "ff3a79p64wi68c"
           },
           "editorMode": "code",
-          "expr": "node_memory_MemTotal_bytes / 1024 / 1024 / 1024\r\n",
+          "expr": "node_memory_MemTotal_bytes{instance=\"$instance\"} / 1024 / 1024 / 1024\r\n",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -521,7 +521,7 @@
             "uid": "ff3a79p64wi68c"
           },
           "editorMode": "code",
-          "expr": "100 - (avg by(cpu) (rate(node_cpu_seconds_total{mode=\"idle\", instance=\"node_exporter:9100\"}[5m])) * 100)\r\n",
+          "expr": "100 - (avg by(cpu) (rate(node_cpu_seconds_total{mode=\"idle\", instance=\"$instance\"}[5m])) * 100)\r\n",
           "hide": false,
           "legendFormat": "__auto",
           "range": true,
@@ -533,7 +533,7 @@
             "uid": "ff3a79p64wi68c"
           },
           "editorMode": "code",
-          "expr": "node_load1",
+          "expr": "node_load1{instance=\"$instance\"}\r\n",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -546,7 +546,7 @@
             "uid": "ff3a79p64wi68c"
           },
           "editorMode": "code",
-          "expr": "node_load5",
+          "expr": "node_load5{instance=\"$instance\"}",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -559,7 +559,7 @@
             "uid": "ff3a79p64wi68c"
           },
           "editorMode": "code",
-          "expr": "node_load15",
+          "expr": "node_load15{instance=\"$instance\"}",
           "hide": false,
           "instant": false,
           "legendFormat": "__auto",
@@ -579,10 +579,14 @@
       {
         "allowCustomValue": false,
         "current": {
-          "text": "All",
-          "value": "$__all"
+          "text": [
+            "node_exporter:9100"
+          ],
+          "value": [
+            "node_exporter:9100"
+          ]
         },
-        "definition": "label_values(node_cpu_seconds_total,$instance)",
+        "definition": "label_values(node_cpu_seconds_total,instance)",
         "includeAll": true,
         "label": "Node",
         "multi": true,
@@ -590,7 +594,7 @@
         "options": [],
         "query": {
           "qryType": 1,
-          "query": "label_values(node_cpu_seconds_total,$instance)",
+          "query": "label_values(node_cpu_seconds_total,instance)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
@@ -607,5 +611,5 @@
   "timezone": "browser",
   "title": "Grafana Dashboard (Node Exporter)",
   "uid": "adcmdsd",
-  "version": 14
+  "version": 22
 }
