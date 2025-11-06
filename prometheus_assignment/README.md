@@ -39,19 +39,18 @@ Copy code
 From project root:
 ```bash
 docker-compose up -d
-
-
+```
 Check running containers:
 ```bash
 docker ps
-
+```
 You should see:
 ```scss
 Prometheus (9090)
 Grafana (3000)
 Node Exporter (9100)
 Postgres Exporter (9187)
-
+```
 ### 3. Access Grafana
-Open: ```http://localhost:3000```
+Open: `http://localhost:3000`
 
